@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "EditBooking";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<style>
+    i {
+        text-decoration: underline;
+    }
+</style>
+
+@{if (TempData["msg"] != null)
+{
+    <script>alert('@TempData["msg"]')</script>
+}
+}
+<div>
+    <u>@Html.ActionLink("Back", "Adminhome")</u>
+</div>
+
+
+<center>
+    <h2>EditBooking</h2>
+    <br />
+  
+    @if (ViewBag.data != null)
+    {
+        <table class="table table-striped"  >
+            <tr>
+                <th>
+                    CustomerId
+                </th>
+                <th>
+                    TypeId
+                </th>
+                <th>
+                    City
+                </th>
+
+
+                <th>
+                    ServiceDate
+                </th>
+                <th>
+                    SubmitDate
+                </th>
+                <th>
+                    Requirements
+                </th>
+                <th>
+                    Status
+                </th>
+
+                <th>
+                    AdvanceAmount
+                </th>
+
+                <th>Action</th>
+            </tr>
+
+            @foreach (var item in ViewBag.data)
+{
+    <tr>
+        <td>
+            @item.CustomerId
+        </td>
+        <td>
+            @item.TypeId
+        </td>
+        <td>
+            @item.City
+        </td>
+
+        <td>
+            @item.ServiceDate
+        </td>
+        <td>
+            @item.SubmitDate
+        </td>
+        <td>
+            @item.Requirements
+        </td>
+        <td>
+            @item.Status
+        </td>
+
+        <td>
+            @item.AdvanceAmount
+        </td>
+        
+                <td>
+    <i>
+        <b>
+           @Html.ActionLink("Edit Details", "EditBookingDetails", "Admin", new { Rid = item.RequestId }, null)
+
+        </b>
+    </i>
+               </td>
+
+
+
+    </tr>
+
+                            <tr></tr>
+
+
+
+}
+
+        </table>
+    }
+</center>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

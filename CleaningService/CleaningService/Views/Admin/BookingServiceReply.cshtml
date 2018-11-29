@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "BookingServiceReply";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div>
+    <u>@Html.ActionLink("Back", "Adminhome")</u>
+</div>
+<center>
+    <style>
+       i{
+            text-decoration: underline;
+        }
+    </style>
+<h2>Booking Service Reply</h2>
+<br />
+@{if (TempData["msg"] != null)
+{
+    <script>alert('@TempData["msg"]')</script>
+}
+}
+
+@if (ViewBag.data != null)
+{
+        <table class="table table-striped"  >
+        <tr>
+        
+            <th>
+                CustomerEmail
+            </th>
+            
+            <th>
+                TypeName
+            </th>
+
+            <th>
+                City
+            </th>
+            <th>
+                Suburb
+            </th>
+            <th>
+                Street
+            </th>
+            <th>
+                ServiceDate
+            </th>
+            <th>
+                SubmitDate
+            </th>
+            <th>
+                Requirements
+            </th>
+            
+
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in ViewBag.data)
+        {
+            
+            <tr>
+                
+                <td>
+                    @item.CustomerId
+                </td>
+                
+                <td>
+                    @item.TypeName
+                </td>
+                <td>
+                    @item.City
+                </td>
+                <td>
+                    @item.Suburb
+                </td>
+                <td>
+                    @item.Street
+                </td>
+                <td>
+                    @item.ServiceDate
+                </td>
+                <td>
+                    @item.SubmitDate
+                </td>
+                <td>
+                    @item.Requirements
+                </td>
+                
+
+                <td>
+                    <i><b>
+                     @Html.ActionLink("Book", "BookingConfirmation", "Admin", new { Rid = item.RequestId }, null)</b></i>
+
+
+                </td>
+
+            </tr>
+        }
+
+    </table>
+}</center>
+
+<br />
+<br /><br />
+<br /><br />
+<br />
+<br /><br /><br /><br /><br /><br /><br />

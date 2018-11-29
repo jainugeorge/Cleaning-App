@@ -1,0 +1,54 @@
+﻿@model CleaningService.Models.ServiceAvailable
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+<div>
+    <u>@Html.ActionLink("Back", "servicedetails")</u>
+</div>
+<center>
+    <h2>Edit</h2>
+    <br /><br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <table class="table table-striped">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.TypeId)
+
+            <tr>
+                <td>@Html.LabelFor(model => model.TypeName, new { @class = "control-label col-md-2" })</td>
+                <td>  @Html.EditorFor(model => model.TypeName)</td>
+                <td> @Html.ValidationMessageFor(model => model.TypeName)</td>
+
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.MinimumDurationInHours, new { @class = "control-label col-md-2" })</td>
+                <td>  @Html.EditorFor(model => model.MinimumDurationInHours)</td>
+                <td> @Html.ValidationMessageFor(model => model.MinimumDurationInHours)</td>
+
+            </tr>
+
+
+            <tr>
+                <td>@Html.LabelFor(model => model.PricePerHour, new { @class = "control-label col-md-2" })</td>
+                <td>  @Html.EditorFor(model => model.PricePerHour)</td>
+                <td> @Html.ValidationMessageFor(model => model.PricePerHour)</td>
+
+            </tr>
+
+
+
+
+            <tr>
+                <td></td>
+                <td>  <input type="submit" value="Save" class="btn btn-default" /></td>
+            </tr>
+        </table>
+    }
+</center>
+<br /><br /><br />

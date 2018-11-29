@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CleaningService.Models.Complaint>
+@{
+    ViewBag.Title = "ComplaintReply";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<style>
+    i {
+        text-decoration: underline;
+    }
+</style>
+<div>
+    <u>@Html.ActionLink("Back", "Complaint")</u>
+</div>
+<center>
+    <h2>Complaint Reply</h2>
+    <br />
+   
+
+
+    @if (ViewBag.data != null)
+    {
+
+        if (Model != null)
+        {
+
+        <table class="table table-striped"  >
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubmitDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Complaints)
+                    </th>
+                   
+                   <th>Action</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubmitDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Complaints)
+                        </td>
+                       
+                        <td> <i><b>@Html.ActionLink("Reply", "Complaint", "Admin" ,new { ComplaintId = item.ComplaintId}, null) </b></i></td>
+                    </tr>
+                }
+
+
+            </table>
+       
+        
+        }
+    }
+</center>
+
+<br />
+<br />
+<br /><br /><br /><br /><br />
+<br /><br /><br /><br />

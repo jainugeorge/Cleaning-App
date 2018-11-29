@@ -1,0 +1,55 @@
+﻿@model CleaningService.Models.Complaint
+@{
+    ViewBag.Title = "PostComplaint";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+
+<div>
+    <u>@Html.ActionLink("Back", "Customerhome")</u>
+</div>
+<center>
+    @{if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+    }
+    <h2>Post Complaint</h2>
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true)
+
+
+
+        <table class="table table-striped"  >
+            <tr>
+                <td> @Html.LabelFor(model => model.Subject, new { @class = "control-label col-md-2", required = "required" }) </td>
+                <td> @Html.EditorFor(model => model.Subject) </td>
+                <td> @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" }) </td>
+            </tr>
+
+
+            <tr>
+                <td> @Html.LabelFor(model => model.Complaints, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>   @Html.TextAreaFor(model => model.Complaints)</td>
+                <td> @Html.ValidationMessageFor(model => model.Complaints, "", new { @class = "text-danger" })</td>
+            </tr>
+
+
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create" class="btn btn-default" /> </td>
+            </tr>
+        </table>
+
+
+    }
+</center>
+
+<br /><br /><br /><br /><br />
+<br />
+<br /><br />

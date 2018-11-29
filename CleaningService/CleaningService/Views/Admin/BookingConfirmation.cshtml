@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "BookingConfirmation";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div>
+  <u>@Html.ActionLink("Back", "BookingServiceReply")</u>
+</div>
+<center>
+    <h2>Booking Confirmation</h2>
+    <br />
+
+
+    @{if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+    }
+    @if (ViewBag.data != null)
+    {
+        <table class="table table-striped"  >
+            <tr>
+                <th>
+                    CustomerEmail
+                </th>
+                <th>
+                    TypeName
+                </th>
+
+                <th>
+                    City
+                </th>
+                <th>
+                    Suburb
+                </th>
+                <th>
+                    Street
+                </th>
+                <th>
+                    ServiceDate
+                </th>
+                <th>
+                    SubmitDate
+                </th>
+                <th>
+                    Requirements
+                </th>
+                <th>
+                   Total
+                </th>
+
+
+                
+            </tr>
+
+            @foreach (var item in ViewBag.data)
+            {
+                <tr>
+                  
+                    <td>
+                        @item.CustomerId
+                    </td>
+                    <td>
+                        @item.TypeName
+                    </td>
+                    <td>
+                        @item.City
+                    </td>
+                    <td>
+                        @item.Suburb
+                    </td>
+                    <td>
+                        @item.Street
+                    </td>
+                    <td>
+                        @item.ServiceDate
+                    </td>
+                    <td>
+                        @item.SubmitDate
+                    </td>
+                    <td>
+                        @item.Requirements
+                    </td>
+                    <td>
+                        @item.Total
+                    </td>
+
+
+
+                </tr>
+            }
+
+        </table>
+    }
+    <br />
+    <br />
+    @using (Html.BeginForm("BookingConfirmation", "Admin", FormMethod.Post))
+    {
+        <table class="table table-striped"  >
+
+
+            <tr>
+                <th>Status</th>
+                <td> @Html.DropDownList("t1", new SelectList(new[] { "confirmed", "not confirmed" }))</td>
+
+                <td colspan="2">
+                    <h3 style="color:red">@ViewData["error"]</h3>
+
+                </td>
+
+            </tr>
+            
+
+            <tr>
+                <th>Advance Amount</th>
+                <td>@Html.TextBox("t2")</td>
+                <td colspan="2">
+                    <h3 style="color:red">@ViewData["error"]</h3>
+
+                </td>
+            </tr>
+            <tr>
+
+            <tr>
+                <th>Comment Box</th>
+                <td>@Html.TextArea("t3")</td>
+                <td colspan="2">
+                    <h3 style="color:red">@ViewData["error"]</h3>
+
+                </td>
+            </tr>
+            <tr></tr>
+
+            <tr> <td> </td> <td><input type="submit" value="Update"></td></tr>
+
+
+        </table>
+}</center>
+
+<br />
+<br /><br />
+

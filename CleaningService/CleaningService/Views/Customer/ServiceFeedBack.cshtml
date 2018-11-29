@@ -1,0 +1,45 @@
+﻿@model CleaningService.Models.Feedback
+
+@{
+    ViewBag.Title = "ServiceFeedBack";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+
+
+<div>
+    <u>@Html.ActionLink("Back", "SearchBookingDetails")</u>
+</div>
+<center>
+    <h2>Service FeedBack</h2>
+    <br />
+    <table class="table table-striped">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.RequestId)
+            @Html.HiddenFor(model => model.FeedbackId)
+            @Html.HiddenFor(model => model.CustomerId)
+
+
+            <tr>
+                <td> @Html.LabelFor(model => model.FeedBack1, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>    @Html.TextAreaFor(model => model.FeedBack1)</td>
+                <td>    @Html.ValidationMessageFor(model => model.FeedBack1, "", new { @class = "text-danger" })</td>
+            </tr>
+
+
+
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Save" class="btn btn-default" /></td>
+            </tr>
+        }
+
+    </table>
+</center>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

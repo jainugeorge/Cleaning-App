@@ -1,0 +1,47 @@
+E:\faith\CleaningService\CleaningService\bin\CleaningService.dll.config
+E:\faith\CleaningService\CleaningService\bin\CleaningService.dll
+E:\faith\CleaningService\CleaningService\bin\CleaningService.pdb
+E:\faith\CleaningService\CleaningService\bin\EntityFramework.dll
+E:\faith\CleaningService\CleaningService\bin\EntityFramework.SqlServer.dll
+E:\faith\CleaningService\CleaningService\bin\System.Web.Helpers.dll
+E:\faith\CleaningService\CleaningService\bin\System.Web.Mvc.dll
+E:\faith\CleaningService\CleaningService\bin\System.Web.Razor.dll
+E:\faith\CleaningService\CleaningService\bin\System.Web.Webpages.Deployment.dll
+E:\faith\CleaningService\CleaningService\bin\System.Web.Webpages.dll
+E:\faith\CleaningService\CleaningService\bin\System.Web.Webpages.Razor.dll
+E:\faith\CleaningService\CleaningService\bin\EntityFramework.xml
+E:\faith\CleaningService\CleaningService\bin\EntityFramework.SqlServer.xml
+E:\faith\CleaningService\CleaningService\bin\System.Web.Razor.xml
+E:\faith\CleaningService\CleaningService\bin\System.Web.Webpages.xml
+E:\faith\CleaningService\CleaningService\bin\System.Web.Webpages.Deployment.xml
+E:\faith\CleaningService\CleaningService\bin\System.Web.Webpages.Razor.xml
+E:\faith\CleaningService\CleaningService\bin\System.Web.Helpers.xml
+E:\faith\CleaningService\CleaningService\bin\System.Web.Mvc.xml
+E:\faith\CleaningService\CleaningService\obj\Debug\CleaningService.dll
+E:\faith\CleaningService\CleaningService\obj\Debug\CleaningService.pdb
+E:\faith\CleaningService\CleaningService\obj\Debug\CleaningService.csprojResolveAssemblyReference.cache
+G:\FAITH PROJECT\CleaningService\CleaningService\obj\Debug\CleaningService.csprojResolveAssemblyReference.cache
+G:\FAITH PROJECT\CleaningService\CleaningService\obj\Debug\CleaningService.csproj.CoreCompileInputs.cache
+G:\FAITH PROJECT\CleaningService\CleaningService\obj\Debug\CleaningService.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\obj\Debug\CleaningService.pdb
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\CleaningService.dll.config
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\CleaningService.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\CleaningService.pdb
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\EntityFramework.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\EntityFramework.SqlServer.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Helpers.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Mvc.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Razor.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Webpages.Deployment.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Webpages.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Webpages.Razor.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\Microsoft.Web.Infrastructure.dll
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\EntityFramework.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\EntityFramework.SqlServer.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Razor.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Webpages.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Webpages.Deployment.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Webpages.Razor.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Helpers.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\System.Web.Mvc.xml
+G:\FAITH PROJECT\CleaningService\CleaningService\bin\Microsoft.Web.Infrastructure.xml

@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "OurServices";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+<style>
+    i {
+        text-decoration: underline;
+    }
+</style>
+<div>
+    <u>@Html.ActionLink("Back", "Customerhome")</u>
+</div>
+@{if (TempData["msg"] != null)
+{
+    <script>alert('@TempData["msg"]')</script>
+}
+}
+<center>
+    <h2>Select Service</h2>
+
+    <br />
+    @if (ViewBag.data != null)
+    {
+
+        <table class="table table-striped"  >
+            <tr>
+                <th>
+                    TypeName
+                </th>
+                <th>
+                    Minimum Duration
+                </th>
+                <th>
+                    PricePerHour
+                </th>
+                <th>
+                   Total
+                </th>
+
+                <th>
+                    Picture
+                </th>
+                
+
+                <th>Action</th>
+            </tr>
+
+            @foreach (var item in ViewBag.data)
+            {
+                <tr>
+                    <td>
+                        @item.TypeName
+                    </td>
+                    <td>
+                        @item.MinimumDurationInHours
+                    </td>
+                    <td>
+                        @item.PricePerHour
+                    </td>
+                    <td>
+                        @item.Total
+                    </td>
+                    <td>
+                        <img src="@item.Picture" width="300" height="300" />
+                    </td>
+                   
+                    <td>
+                        <i><b>
+                        @Html.ActionLink("Select", "SelectService", "Customer", new { tid = item.TypeId, TypeName = item.TypeName ,Total=item.Total}, null)</b></i>
+                    </td>
+
+
+                </tr>
+            }
+
+        </table>
+    }
+
+
+
+
+
+</center>
+<br />
+<br />
+<br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br />
+<br /><br />

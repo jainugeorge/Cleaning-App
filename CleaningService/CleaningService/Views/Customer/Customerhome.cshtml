@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Customerhome";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+@{if (TempData["msg"] != null)
+{
+    <script>alert('@TempData["msg"]')</script>
+}
+}
+<!--// top-bar -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Stats -->
+        <div class="outer-w3-agile col-xl">
+            <div class="stat-grid p-3 d-flex align-items-center justify-content-between bg-primary">
+                <div class="s-l">
+                    <h5>Satisfied Customers</h5>
+
+                </div>
+                <div class="s-r">
+                    <h6>
+                        90%
+                        <i class="far fa-edit"></i>
+                    </h6>
+                </div>
+            </div>
+            <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-success">
+                <div class="s-l">
+                    <h5>Buildings Cleaned</h5>
+
+                </div>
+                <div class="s-r">
+                    <h6>
+                        75%
+                        <i class="far fa-smile"></i>
+                    </h6>
+                </div>
+            </div>
+            <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-danger">
+                <div class="s-l">
+                    <h5>Clever Employees</h5>
+
+                </div>
+                <div class="s-r">
+                    <h6>
+                        75%
+                        <i class="fas fa-users"></i>
+                    </h6>
+                </div>
+            </div>
+            <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-warning">
+                <div class="s-l">
+                    <h5>Shiny Clean</h5>
+
+                </div>
+                <div class="s-r">
+                    <h6>
+                        75%
+                        <i class="fas fa-tasks"></i>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <!--// Stats -->
+        <!-- Pie-chart -->
+        <!--// Pie-chart -->
+    </div>
+</div>

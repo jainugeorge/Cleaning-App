@@ -1,0 +1,105 @@
+﻿@model IEnumerable<CleaningService.Models.ServiceAvailable>
+
+
+    
+@{
+    ViewBag.Title = "serviceavailable_status_update";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div>
+    <u>@Html.ActionLink("Back", "servicedetails")</u>
+</div>
+<center>
+
+    <h2>Service Status Update</h2>
+    <br />
+    @using (Html.BeginForm())
+    {
+        <p>
+            Select TypeId:@Html.DropDownList("TypeId", "Select")<br />
+            &nbsp;     &nbsp;      &nbsp;    &nbsp;    &nbsp;   &nbsp;    &nbsp;      &nbsp;       &nbsp;     &nbsp;     &nbsp;     &nbsp;
+            &nbsp;     &nbsp;      &nbsp;    &nbsp;    &nbsp;   &nbsp;    &nbsp;      &nbsp;       &nbsp;     &nbsp;     &nbsp;     &nbsp;
+            <br />   <br />
+            <input type="submit" value="Search" />
+        </p>
+    }
+    @{if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+    }
+    <br />
+    @if (ViewBag.data != null)
+    {
+        <table class="table table-striped"  >
+            <tr>
+                <th>
+                    Type Name
+                </th>
+                <th>
+                    Minimum Duration In Hours
+                </th>
+                <th>
+                    Price Per Hour
+                </th>
+                <th>
+                    Picture
+                </th>
+                <th>
+                    Status
+                </th>
+                
+            </tr>
+
+            @foreach (var item in ViewBag.data)
+            {
+                <tr>
+                    <td>
+                        @item.TypeName
+                    </td>
+                    <td>
+                        @item.MinimumDurationInHours
+                    </td>
+                    <td>
+                        @item.PricePerHour
+                    </td>
+                    <td>
+                        <img src="@item.Picture" width="200" height="200" />
+                    </td>
+                    <td>
+                        @item.Status
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+        <br />
+        <br />
+        using (Html.BeginForm("serviceavailable_status_update1", "Admin", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <th>Status</th>
+                    <td> @Html.DropDownList("d1", new SelectList(new[] { "Available", "Not available" }))</td>
+
+
+
+                </tr>
+
+                <tr> <td> </td> <td><input type="submit" value="Update"></td></tr>
+
+
+            </table>
+
+        }
+    }
+
+
+
+</center>
+
+<br /><br />
+<br />
+<br /><br /><br /><br />
+<br />

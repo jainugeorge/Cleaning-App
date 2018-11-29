@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeResignation";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div>
+  <u>@Html.ActionLink("Back", "Adminhome")</u>
+</div>
+<center>
+    <h2>Employee Resignation</h2>
+
+    <br /> 
+    @using (Html.BeginForm())
+    {
+        <p>
+            Select EmployeeID:@Html.DropDownList("EmployeeId", "Select")<br />
+            &nbsp;     &nbsp;      &nbsp;    &nbsp;    &nbsp;   &nbsp;    &nbsp;      &nbsp;       &nbsp;     &nbsp;     &nbsp;     &nbsp;
+            &nbsp;     &nbsp;      &nbsp;    &nbsp;    &nbsp;   &nbsp;    &nbsp;      &nbsp;       &nbsp;     &nbsp;     &nbsp;     &nbsp;
+            <br />   <br />
+            <input type="submit" value="Search" />
+        </p>
+    }
+    @{if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+    }
+    <br />
+    @if (ViewBag.data != null)
+    {
+        <table class="table table-striped"  >
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+
+                <th>Experience</th>
+                <th>Designation</th>
+                <th>Salary</th>
+
+
+                <th>Start_date</th>
+                <th>End_date</th>
+                <th>Remarks</th>
+
+
+            </tr>
+            @foreach (var item in ViewBag.data)
+            {
+
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Gender</td>
+                    <td>@item.DOB</td>
+                    <td>@item.Email</td>
+                    <td>@item.PhoneNumber</td>
+
+                    <td>@item.Address</td>
+                    <td>@item.Experience</td>
+                    <td>@item.Designation</td>
+                    <td>@item.Salary</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndDate</td>
+                    <td>@item.Remarks</td>
+
+                </tr>
+
+
+            }
+        </table>
+
+
+
+
+
+
+
+        <br /><br />
+        using (Html.BeginForm("EmployeeResignation1", "Admin", FormMethod.Post))
+        {
+        <table class="table table-striped"  >
+                <tr>
+                    <th>End date</th>
+
+
+                    <td><input type="date" name="t1" /></td>
+                    <td colspan="2">
+                        <h3 style="color:red">@ViewData["error1"]</h3>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>Remarks</th>
+                    <td>@Html.TextArea("t2")</td>
+                    <td colspan="2">
+                        <h3 style="color:red">@ViewData["error1"]</h3>
+
+                    </td>
+                </tr>
+                <tr> <td> </td> <td><input type="submit" value="update"></td></tr>
+
+
+            </table>
+        }
+
+
+    }
+
+</center>
+
+<br />
+<br /><br />
+<br />
+<br /><br /><br /><br />
+<br />

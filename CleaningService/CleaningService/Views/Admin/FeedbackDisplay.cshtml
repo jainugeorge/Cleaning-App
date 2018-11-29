@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CleaningService.Models.Feedback>
+@{
+    ViewBag.Title = "FeedbackDisplay";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+
+    <div>
+    <u>@Html.ActionLink("Back", "Adminhome")</u>
+</div>
+<center>
+    <h2>Feedback Display</h2>
+    @{if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+    }
+    <br />
+
+    <table class="table table-striped">
+        <tr>
+
+            <th>
+                CustomerId
+            </th>
+            <th>
+                RequestId
+            </th>
+            <th>
+                FeedBack
+            </th>
+            <th>
+                Date
+            </th>
+
+
+        </tr>
+
+        @foreach (var item in ViewBag.data)
+        {
+
+            <tr>
+                <td>
+                    @item.CustomerId
+                </td>
+                <td>
+                    @item.RequestId
+                </td>
+                <td>
+                    @item.FeedBack1
+                </td>
+                <td>
+                    @item.Date
+                </td>
+
+
+
+            </tr>
+        }
+
+
+    </table>
+</center>
+<br /><br />
+<br />
+<br />
+<br /><br /><br /><br /><br />
+<br /><br />

@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85371BA9-4DF6-486E-B108-E968C6C1A42C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CleaningService</RootNamespace>
+    <AssemblyName>CleaningService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\CleaningService.mdf" />
+    <Content Include="App_Data\CleaningService_log.ldf">
+      <DependentUpon>CleaningService.mdf</DependentUpon>
+    </Content>
+    <Content Include="Contents\AdminTemplate\css\bar.css" />
+    <Content Include="Contents\AdminTemplate\css\bootstrap.css" />
+    <Content Include="Contents\AdminTemplate\css\fontawesome-all.css" />
+    <Content Include="Contents\AdminTemplate\css\pignose.calender.css" />
+    <Content Include="Contents\AdminTemplate\css\simplyCountdown.css" />
+    <Content Include="Contents\AdminTemplate\css\style.css" />
+    <Content Include="Contents\AdminTemplate\css\style4.css" />
+    <Content Include="Contents\AdminTemplate\css\widgets.css" />
+    <Content Include="Contents\AdminTemplate\images\1.jpg" />
+    <Content Include="Contents\AdminTemplate\images\2.jpg" />
+    <Content Include="Contents\AdminTemplate\images\3.jpg" />
+    <Content Include="Contents\AdminTemplate\images\4.jpg" />
+    <Content Include="Contents\AdminTemplate\images\5.jpg" />
+    <Content Include="Contents\AdminTemplate\images\b1.jpg" />
+    <Content Include="Contents\AdminTemplate\images\ban1.jpg" />
+    <Content Include="Contents\AdminTemplate\images\ban2.jpg" />
+    <Content Include="Contents\AdminTemplate\images\ban3.jpg" />
+    <Content Include="Contents\AdminTemplate\images\ban4.jpg" />
+    <Content Include="Contents\AdminTemplate\images\ban5.jpg" />
+    <Content Include="Contents\AdminTemplate\images\ban6.jpg" />
+    <Content Include="Contents\AdminTemplate\images\c1.jpg" />
+    <Content Include="Contents\AdminTemplate\images\c2.jpg" />
+    <Content Include="Contents\AdminTemplate\images\c3.jpg" />
+    <Content Include="Contents\AdminTemplate\images\c4.jpg" />
+    <Content Include="Contents\AdminTemplate\images\clone.jpg" />
+    <Content Include="Contents\AdminTemplate\images\menu1.jpg" />
+    <Content Include="Contents\AdminTemplate\images\Preloader_2.gif" />
+    <Content Include="Contents\AdminTemplate\images\profile.jpg" />
+    <Content Include="Contents\AdminTemplate\images\timer.jpg" />
+    <Content Include="Contents\AdminTemplate\js\amcharts.js" />
+    <Content Include="Contents\AdminTemplate\js\bootstrap.min.js" />
+    <Content Include="Contents\AdminTemplate\js\chart1.js" />
+    <Content Include="Contents\AdminTemplate\js\circle_bar.js" />
+    <Content Include="Contents\AdminTemplate\js\example.js" />
+    <Content Include="Contents\AdminTemplate\js\index.js" />
+    <Content Include="Contents\AdminTemplate\js\jquery-2.2.3.min.js" />
+    <Content Include="Contents\AdminTemplate\js\jquery.charts.js" />
+    <Content Include="Contents\AdminTemplate\js\kuma-gauge.jquery.js" />
+    <Content Include="Contents\AdminTemplate\js\modernizr.js" />
+    <Content Include="Contents\AdminTemplate\js\moment.min.js" />
+    <Content Include="Contents\AdminTemplate\js\percentage-circles.js" />
+    <Content Include="Contents\AdminTemplate\js\pignose.calender.js" />
+    <Content Include="Contents\AdminTemplate\js\prettymaps.js" />
+    <Content Include="Contents\AdminTemplate\js\raphael-min.js" />
+    <Content Include="Contents\AdminTemplate\js\rumcaJS.js" />
+    <Content Include="Contents\AdminTemplate\js\script.js" />
+    <Content Include="Contents\AdminTemplate\js\SimpleChart.js" />
+    <Content Include="Contents\AdminTemplate\js\simplyCountdown.js" />
+    <Content Include="Contents\AdminTemplate\js\skycons.js" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-brands-400.svg" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-regular-400.svg" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-solid-900.svg" />
+    <Content Include="Contents\HomeTemplate\css\bootstrap.css" />
+    <Content Include="Contents\HomeTemplate\css\fontawesome-all.css" />
+    <Content Include="Contents\HomeTemplate\css\progresscircle.css" />
+    <Content Include="Contents\HomeTemplate\css\single.css" />
+    <Content Include="Contents\HomeTemplate\css\style.css" />
+    <Content Include="Contents\HomeTemplate\images\1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\3.jpg" />
+    <Content Include="Contents\HomeTemplate\images\4.jpg" />
+    <Content Include="Contents\HomeTemplate\images\a1.png" />
+    <Content Include="Contents\HomeTemplate\images\bg.jpg" />
+    <Content Include="Contents\HomeTemplate\images\bg2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\c1.png" />
+    <Content Include="Contents\HomeTemplate\images\carpetcleaning1.jpeg" />
+    <Content Include="Contents\HomeTemplate\images\carpetcleaning1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\close.png" />
+    <Content Include="Contents\HomeTemplate\images\commercialcleaning.jpeg" />
+    <Content Include="Contents\HomeTemplate\images\g1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\g2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\g3.jpg" />
+    <Content Include="Contents\HomeTemplate\images\g4.jpg" />
+    <Content Include="Contents\HomeTemplate\images\iphone.png" />
+    <Content Include="Contents\HomeTemplate\images\IroningService1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\ironingservicestring2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\l1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\l2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\left1.png" />
+    <Content Include="Contents\HomeTemplate\images\logo3.png" />
+    <Content Include="Contents\HomeTemplate\images\m1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\m2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\m3.jpg" />
+    <Content Include="Contents\HomeTemplate\images\m4.jpg" />
+    <Content Include="Contents\HomeTemplate\images\move-top.png" />
+    <Content Include="Contents\HomeTemplate\images\offer1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\offer2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\offer3.jpg" />
+    <Content Include="Contents\HomeTemplate\images\offer4.jpg" />
+    <Content Include="Contents\HomeTemplate\images\offer5.jpg" />
+    <Content Include="Contents\HomeTemplate\images\pajns.png" />
+    <Content Include="Contents\HomeTemplate\images\pajnscl.png" />
+    <Content Include="Contents\HomeTemplate\images\pest-control-1.png" />
+    <Content Include="Contents\HomeTemplate\images\pest-control-inner.jpg" />
+    <Content Include="Contents\HomeTemplate\images\rescleaning1.jpeg" />
+    <Content Include="Contents\HomeTemplate\images\rescleaning3.jpeg" />
+    <Content Include="Contents\HomeTemplate\images\residentialcleaning.jpg" />
+    <Content Include="Contents\HomeTemplate\images\right1.png" />
+    <Content Include="Contents\HomeTemplate\images\t1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\t2.jpg" />
+    <Content Include="Contents\HomeTemplate\images\t3.jpg" />
+    <Content Include="Contents\HomeTemplate\images\t4.jpg" />
+    <Content Include="Contents\HomeTemplate\images\te1.jpg" />
+    <Content Include="Contents\HomeTemplate\images\te2.jpg" />
+    <Content Include="Contents\HomeTemplate\js\bootstrap.js" />
+    <Content Include="Contents\HomeTemplate\js\cleaning.js" />
+    <Content Include="Contents\HomeTemplate\js\easing.js" />
+    <Content Include="Contents\HomeTemplate\js\jquery-2.2.3.min.js" />
+    <Content Include="Contents\HomeTemplate\js\jquery.picEyes.js" />
+    <Content Include="Contents\HomeTemplate\js\move-top.js" />
+    <Content Include="Contents\HomeTemplate\js\progresscircle.js" />
+    <Content Include="Contents\HomeTemplate\js\responsiveslides.min.js" />
+    <Content Include="Contents\HomeTemplate\js\SmoothScroll.min.js" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-brands-400.svg" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-regular-400.svg" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-solid-900.svg" />
+    <Content Include="Contents\Home\css\bootstrap.css" />
+    <Content Include="Contents\Home\css\creditly.css" />
+    <Content Include="Contents\Home\css\easy-responsive-tabs.css" />
+    <Content Include="Contents\Home\css\flexslider.css" />
+    <Content Include="Contents\Home\css\font-awesome.css" />
+    <Content Include="Contents\Home\css\jquery-ui1.css" />
+    <Content Include="Contents\Home\css\popuo-box.css" />
+    <Content Include="Contents\Home\css\style.css" />
+    <Content Include="Contents\Home\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contents\Home\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Contents\Home\images\1.jpg" />
+    <Content Include="Contents\Home\images\10.jpg" />
+    <Content Include="Contents\Home\images\12.jpg" />
+    <Content Include="Contents\Home\images\16.jpg" />
+    <Content Include="Contents\Home\images\18.jpg" />
+    <Content Include="Contents\Home\images\19.png" />
+    <Content Include="Contents\Home\images\2.jpg" />
+    <Content Include="Contents\Home\images\2.png" />
+    <Content Include="Contents\Home\images\22.jpeg" />
+    <Content Include="Contents\Home\images\23.jpeg" />
+    <Content Include="Contents\Home\images\3.jpg" />
+    <Content Include="Contents\Home\images\4.jpg" />
+    <Content Include="Contents\Home\images\5.jpg" />
+    <Content Include="Contents\Home\images\6.jpg" />
+    <Content Include="Contents\Home\images\7.jpg" />
+    <Content Include="Contents\Home\images\8.jpg" />
+    <Content Include="Contents\Home\images\9.jpg" />
+    <Content Include="Contents\Home\images\a1.jpg" />
+    <Content Include="Contents\Home\images\a10.jpg" />
+    <Content Include="Contents\Home\images\a11.jpg" />
+    <Content Include="Contents\Home\images\a12.jpg" />
+    <Content Include="Contents\Home\images\a2.jpg" />
+    <Content Include="Contents\Home\images\a3.jpg" />
+    <Content Include="Contents\Home\images\a4.jpg" />
+    <Content Include="Contents\Home\images\a5.jpg" />
+    <Content Include="Contents\Home\images\a6.jpg" />
+    <Content Include="Contents\Home\images\a7.jpg" />
+    <Content Include="Contents\Home\images\a8.jpg" />
+    <Content Include="Contents\Home\images\a9.jpg" />
+    <Content Include="Contents\Home\images\ab.jpg" />
+    <Content Include="Contents\Home\images\about.jpg" />
+    <Content Include="Contents\Home\images\about2.jpg" />
+    <Content Include="Contents\Home\images\arrow.png" />
+    <Content Include="Contents\Home\images\banner.jpg" />
+    <Content Include="Contents\Home\images\banner1.jpg" />
+    <Content Include="Contents\Home\images\banner2.jpg" />
+    <Content Include="Contents\Home\images\banner3.jpg" />
+    <Content Include="Contents\Home\images\banner4.jpg" />
+    <Content Include="Contents\Home\images\bg1.jpg" />
+    <Content Include="Contents\Home\images\clean.jpeg" />
+    <Content Include="Contents\Home\images\clean.jpg" />
+    <Content Include="Contents\Home\images\cln.jpg" />
+    <Content Include="Contents\Home\images\close_1.png" />
+    <Content Include="Contents\Home\images\Company Logo.png" />
+    <Content Include="Contents\Home\images\contact2.jpg" />
+    <Content Include="Contents\Home\images\d1.jpg" />
+    <Content Include="Contents\Home\images\d2.jpg" />
+    <Content Include="Contents\Home\images\d3.jpg" />
+    <Content Include="Contents\Home\images\d4.jpg" />
+    <Content Include="Contents\Home\images\d5.jpg" />
+    <Content Include="Contents\Home\images\g1.jpg" />
+    <Content Include="Contents\Home\images\g2.jpg" />
+    <Content Include="Contents\Home\images\g3.jpg" />
+    <Content Include="Contents\Home\images\images.jpg" />
+    <Content Include="Contents\Home\images\k1.jpg" />
+    <Content Include="Contents\Home\images\k10.jpg" />
+    <Content Include="Contents\Home\images\k11.jpg" />
+    <Content Include="Contents\Home\images\k12.jpg" />
+    <Content Include="Contents\Home\images\k2.jpg" />
+    <Content Include="Contents\Home\images\k3.jpg" />
+    <Content Include="Contents\Home\images\k4.jpg" />
+    <Content Include="Contents\Home\images\k5.jpg" />
+    <Content Include="Contents\Home\images\k6.jpg" />
+    <Content Include="Contents\Home\images\k7.jpg" />
+    <Content Include="Contents\Home\images\k8.jpg" />
+    <Content Include="Contents\Home\images\k9.jpg" />
+    <Content Include="Contents\Home\images\left.png" />
+    <Content Include="Contents\Home\images\Logo.jpg" />
+    <Content Include="Contents\Home\images\logo2.png" />
+    <Content Include="Contents\Home\images\m1.jpg" />
+    <Content Include="Contents\Home\images\m2.jpg" />
+    <Content Include="Contents\Home\images\m3.jpg" />
+    <Content Include="Contents\Home\images\mk4.jpg" />
+    <Content Include="Contents\Home\images\mk5.jpg" />
+    <Content Include="Contents\Home\images\mk6.jpg" />
+    <Content Include="Contents\Home\images\mk7.jpg" />
+    <Content Include="Contents\Home\images\mk8.jpg" />
+    <Content Include="Contents\Home\images\mk9.jpg" />
+    <Content Include="Contents\Home\images\move-up.png" />
+    <Content Include="Contents\Home\images\nav.png" />
+    <Content Include="Contents\Home\images\nut1.png" />
+    <Content Include="Contents\Home\images\nuts1.png" />
+    <Content Include="Contents\Home\images\pay1.png" />
+    <Content Include="Contents\Home\images\pay2.png" />
+    <Content Include="Contents\Home\images\pay3.png" />
+    <Content Include="Contents\Home\images\pay4.png" />
+    <Content Include="Contents\Home\images\pay5.png" />
+    <Content Include="Contents\Home\images\pay6.png" />
+    <Content Include="Contents\Home\images\pay7.png" />
+    <Content Include="Contents\Home\images\pay8.png" />
+    <Content Include="Contents\Home\images\pay9.png" />
+    <Content Include="Contents\Home\images\paypal.png" />
+    <Content Include="Contents\Home\images\right.png" />
+    <Content Include="Contents\Home\images\s1.jpg" />
+    <Content Include="Contents\Home\images\s2.jpg" />
+    <Content Include="Contents\Home\images\s3.jpg" />
+    <Content Include="Contents\Home\images\s4.jpg" />
+    <Content Include="Contents\Home\images\s5.jpg" />
+    <Content Include="Contents\Home\images\s6.jpg" />
+    <Content Include="Contents\Home\images\s7.jpg" />
+    <Content Include="Contents\Home\images\s8.jpg" />
+    <Content Include="Contents\Home\images\s9.jpg" />
+    <Content Include="Contents\Home\images\se1.jpg" />
+    <Content Include="Contents\Home\images\se2.jpg" />
+    <Content Include="Contents\Home\images\se3.jpg" />
+    <Content Include="Contents\Home\images\search.png" />
+    <Content Include="Contents\Home\images\si.jpg" />
+    <Content Include="Contents\Home\images\si2.jpg" />
+    <Content Include="Contents\Home\images\si3.jpg" />
+    <Content Include="Contents\Home\images\star1.png" />
+    <Content Include="Contents\Home\images\star22.png" />
+    <Content Include="Contents\Home\images\tab3.png" />
+    <Content Include="Contents\Home\images\videoimg2.png" />
+    <Content Include="Contents\Home\js\bootstrap.js" />
+    <Content Include="Contents\Home\js\creditly.js" />
+    <Content Include="Contents\Home\js\easing.js" />
+    <Content Include="Contents\Home\js\easyResponsiveTabs.js" />
+    <Content Include="Contents\Home\js\imagezoom.js" />
+    <Content Include="Contents\Home\js\jquery-2.1.4.min.js" />
+    <Content Include="Contents\Home\js\jquery-ui.js" />
+    <Content Include="Contents\Home\js\jquery.flexisel.js" />
+    <Content Include="Contents\Home\js\jquery.flexslider.js" />
+    <Content Include="Contents\Home\js\jquery.magnific-popup.js" />
+    <Content Include="Contents\Home\js\minicart.js" />
+    <Content Include="Contents\Home\js\move-top.js" />
+    <Content Include="Contents\Home\js\SmoothScroll.min.js" />
+    <Content Include="Contents\LoginTemplate\css\font-awesome.min.css" />
+    <Content Include="Contents\LoginTemplate\css\style.css" />
+    <Content Include="Contents\LoginTemplate\images\banner.jpg" />
+    <Content Include="Contents\LoginTemplate\images\bg2.jpg" />
+    <Content Include="Contents\Login\css\main.css" />
+    <Content Include="Contents\Login\css\util.css" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Contents\Login\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Contents\Login\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Contents\Login\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Contents\Login\images\3.jpg" />
+    <Content Include="Contents\Login\images\icons\favicon.ico" />
+    <Content Include="Contents\Login\js\main.js" />
+    <Content Include="Contents\Login\vendor\animate\animate.css" />
+    <Content Include="Contents\Login\vendor\animsition\css\animsition.css" />
+    <Content Include="Contents\Login\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Contents\Login\vendor\animsition\js\animsition.js" />
+    <Content Include="Contents\Login\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Contents\Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Contents\Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Contents\Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Contents\Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Contents\Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Contents\Login\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Contents\Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Contents\Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Contents\Login\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Contents\Login\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Contents\Login\vendor\daterangepicker\moment.js" />
+    <Content Include="Contents\Login\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Contents\Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Contents\Login\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Contents\Login\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Contents\Login\vendor\select2\select2.css" />
+    <Content Include="Contents\Login\vendor\select2\select2.js" />
+    <Content Include="Contents\Login\vendor\select2\select2.min.css" />
+    <Content Include="Contents\Login\vendor\select2\select2.min.js" />
+    <Content Include="Contents\mycss.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Contents\LoginTemplate\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\LoginTemplate\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\LoginTemplate\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\LoginTemplate\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contents\LoginTemplate\fonts\FontAwesome.otf" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-brands-400.eot" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-brands-400.ttf" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-brands-400.woff" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-brands-400.woff2" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-regular-400.eot" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-regular-400.ttf" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-regular-400.woff" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-regular-400.woff2" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-solid-900.eot" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-solid-900.ttf" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-solid-900.woff" />
+    <Content Include="Contents\AdminTemplate\webfonts\fa-solid-900.woff2" />
+    <Content Include="Contents\Home\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\Home\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\Home\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\Home\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contents\Home\fonts\FontAwesome.otf" />
+    <Content Include="Contents\Home\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Contents\Home\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Contents\Home\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Contents\Home\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Contents\Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Contents\Login\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Contents\Login\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Contents\Login\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Contents\Login\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Contents\Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Contents\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\CustomerRegistration.cshtml" />
+    <Content Include="Views\Customer\CustomerLayout.cshtml" />
+    <Content Include="Views\Admin\AdminLayout.cshtml" />
+    <Content Include="Views\Customer\Customerhome.cshtml" />
+    <Content Include="Views\Admin\Adminhome.cshtml" />
+    <Content Include="Views\Admin\servicesentry.cshtml" />
+    <Content Include="Views\Admin\EmployeeRegistration.cshtml" />
+    <Content Include="Views\Admin\EmployeeResignation.cshtml" />
+    <Content Include="Views\Admin\serviceavailable_status_update.cshtml" />
+    <Content Include="Views\Admin\BookingConfirmation.cshtml" />
+    <Content Include="Views\Admin\BookingServiceReply.cshtml" />
+    <Content Include="Views\Admin\EditBookingDetails.cshtml" />
+    <Content Include="Views\Admin\FeedbackDisplay.cshtml" />
+    <Content Include="Views\Admin\changepassword.cshtml" />
+    <Content Include="Views\Admin\ComplaintReply.cshtml" />
+    <Content Include="Views\Customer\changepassword.cshtml" />
+    <Content Include="Views\Customer\OurServices.cshtml" />
+    <Content Include="Views\Customer\SelectService.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CleaningApiController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\booking.cs" />
+    <Compile Include="Models\BookingService.cs" />
+    <Compile Include="Models\cleaningEntities10.cs" />
+    <Compile Include="Models\Complaint.cs" />
+    <Compile Include="Models\complaints.cs" />
+    <Compile Include="Models\custdetails.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerReg.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\employees.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\feedbacks.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\payments.cs" />
+    <Compile Include="Models\service.cs" />
+    <Compile Include="Models\ServiceAvailable.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\VirtualBank.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-brands-400.eot" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-brands-400.ttf" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-brands-400.woff" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-brands-400.woff2" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-regular-400.eot" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-regular-400.ttf" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-regular-400.woff" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-regular-400.woff2" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-solid-900.eot" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-solid-900.ttf" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-solid-900.woff" />
+    <Content Include="Contents\HomeTemplate\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Customer\CheckReply.cshtml" />
+    <Content Include="Views\Customer\Payment.cshtml" />
+    <Content Include="Views\Customer\PostComplaint.cshtml" />
+    <Content Include="Views\Customer\SearchBookingDetails.cshtml" />
+    <Content Include="Views\Customer\ServiceFeedBack.cshtml" />
+    <Content Include="Views\Customer\CheckBooking.cshtml" />
+    <Content Include="Views\Admin\EditBooking.cshtml" />
+    <Content Include="Views\Home\HomeLayout.cshtml" />
+    <Content Include="Views\Home\faqs.cshtml" />
+    <Content Include="Views\Admin\Complaint.cshtml" />
+    <Content Include="Views\Admin\servicedetails.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Path\" />
+    <Folder Include="ServicePics\" />
+    <Folder Include="Views\CleaningApi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>35238</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:35238/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

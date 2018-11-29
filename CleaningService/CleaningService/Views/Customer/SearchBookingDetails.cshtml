@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CleaningService.Models.BookingService>
+
+@{
+    ViewBag.Title = "SearchBookingDetails";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+
+<style>
+    i {
+        text-decoration: underline;
+    }
+</style>
+
+<div>
+    <u>@Html.ActionLink("Back", "Customerhome")</u>
+</div>
+<center>
+    <h2>Search Booking Details</h2>
+    <br />
+   
+<br />
+
+    @if (ViewBag.data != null)
+    {
+
+        <table class="table table-striped"  >
+
+            <tr>
+
+
+                <th>Customer id</th>
+                <th>TypeName</th>
+                <th>City</th>
+                <th>Suburb</th>
+                <th>Street</th>
+                <th>ServiceDate</th>
+                <th>SubmitDate</th>
+                
+                <th>AdvanceAmount</th>
+                <th>Action</th>
+
+            </tr>
+            @foreach (var item in ViewBag.data)
+            {
+                <tr>
+
+                    <td>@item.CustomerId</td>
+                    <td>@item.TypeName</td>
+                    <td>@item.City</td>
+                    <td>@item.Suburb</td>
+                    <td>@item.Street</td>
+                    <td>@item.ServiceDate</td>
+                    <td>@item.SubmitDate</td>
+                   
+                    <td>@item.AdvanceAmount</td>
+                    <td colspan="13" align="center"><i><b> @Html.ActionLink("Service FeedBack", "ServiceFeedBack", "Customer", new { Rid = item.RequestId }, null)</b></i></td>
+                </tr>
+
+
+
+
+            }
+        </table>
+
+    }
+
+
+</center>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

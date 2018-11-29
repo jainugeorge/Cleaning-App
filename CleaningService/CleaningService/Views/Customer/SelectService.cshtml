@@ -1,0 +1,68 @@
+﻿@model CleaningService.Models.BookingService
+@{
+    ViewBag.Title = "SelectService";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+
+
+
+
+
+<div>
+    <u>@Html.ActionLink("Back", "OurServices")</u>
+</div>
+<center>
+    @{if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+    }
+    <h2>Details</h2>
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <table class="table table-striped"  >
+
+
+            <tr>
+                <td> @Html.LabelFor(model => model.City, new { @class = "control-label col-md-2" })</td>
+                <td>   @Html.EditorFor(model => model.City) </td>
+                <td>   @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(model => model.Suburb, new { @class = "control-label col-md-2" })</td>
+                <td>   @Html.EditorFor(model => model.Suburb) </td>
+                <td>   @Html.ValidationMessageFor(model => model.Suburb, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(model => model.Street, new { @class = "control-label col-md-2" })</td>
+                <td>   @Html.EditorFor(model => model.Street) </td>
+                <td>   @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(model => model.ServiceDate, new { @class = "control-label col-md-2" })</td>
+                <td> <input type="date" name="ServiceDate"> </td>
+                <td>   @Html.ValidationMessageFor(model => model.ServiceDate, "", new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Requirements, new { @class = "control-label col-md-2" })</td>
+                <td>   @Html.TextAreaFor(model => model.Requirements) </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>  <input type="submit" value="Submit" /> </td>
+            </tr>
+
+        </table>
+
+    }
+</center>
+
+<br /><br /><br /><br /><br />
+<br />

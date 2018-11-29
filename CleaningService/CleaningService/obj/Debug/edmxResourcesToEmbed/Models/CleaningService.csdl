@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cleaningModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookingService">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TypeId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Suburb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ServiceDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SubmitDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Requirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MinimumDurationInHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdvanceAmount" Type="Int32" Nullable="false" />
+    <Property Name="ReplyDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CommentBox" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="Discount" Type="Int32" Nullable="false" />
+    <Property Name="PaymentAmount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Complaint">
+    <Key>
+      <PropertyRef Name="ComplaintId" />
+    </Key>
+    <Property Name="ComplaintId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SubmitDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Complaints" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Reply" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReplyDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Suburb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="FeedbackId" />
+    </Key>
+    <Property Name="FeedbackId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RequestId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FeedBack1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RequestId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TypeId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubmitDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CardNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CVV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ExpiryMonth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ExpiryYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ServiceAvailable">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MinimumDurationInHours" Type="Int32" Nullable="false" />
+    <Property Name="PricePerHour" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VirtualBank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CardNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CVV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExpiryMonth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExpiryYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BalanceAmount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="cleaningEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookingServices" EntityType="Self.BookingService" />
+    <EntitySet Name="Complaints" EntityType="Self.Complaint" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="ServiceAvailables" EntityType="Self.ServiceAvailable" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="VirtualBanks" EntityType="Self.VirtualBank" />
+  </EntityContainer>
+</Schema>

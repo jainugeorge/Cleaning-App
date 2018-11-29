@@ -1,0 +1,91 @@
+﻿@model CleaningService.Models.BookingService
+
+
+@{
+    ViewBag.Title = "EditBookingDetails";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div>
+   <u>@Html.ActionLink("Back", "EditBooking")</u>
+</div>
+
+<center>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <h2>Edit Booking Details</h2>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.RequestId)
+        @Html.HiddenFor(model => model.TypeId)
+        @Html.HiddenFor(model => model.CustomerId)
+
+        <table class="table table-striped"  >
+            <tr>
+                <td>@Html.LabelFor(model => model.AdvanceAmount, new { @class = "control-label col-md-2" })</td>
+                <td>
+                    @Html.EditorFor(model => model.AdvanceAmount)
+                </td>
+                <td>  @Html.ValidationMessageFor(model => model.AdvanceAmount)</td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td> @Html.LabelFor(model => model.StartTime, new { @class = "control-label col-md-2", required = "required" })</td>
+                
+                <td> <input type="time" name="StartTime" id="StartTime"> </td>
+
+                <td>
+                    @Html.ValidationMessageFor(model => model.StartTime)
+                </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.EndTime, new { @class = "control-label col-md-2" ,required="required"})</td>
+
+                <td> <input type="time" name="EndTime" id="EndTime"> </td>
+                <td> @Html.ValidationMessageFor(model => model.EndTime)</td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Discount, new { @class = "control-label col-md-2" })</td>
+
+                <td>  @Html.EditorFor(model => model.Discount)</td>
+                <td>   @Html.ValidationMessageFor(model => model.Discount)</td>
+
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Total, new { @class = "control-label col-md-2" })</td>
+                <td> @Html.EditorFor(model => model.Total)</td>
+                <td> @Html.ValidationMessageFor(model => model.Total)</td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })</td>
+                <td>@Html.DropDownListFor(model => model.Status, new SelectList(new[] { "Completed"})) </td>
+                <td> @Html.ValidationMessageFor(model => model.Status)</td>
+            </tr>
+
+
+
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Save" class="btn btn-default" /></td>
+            </tr>
+
+        </table>
+    }
+</center>
+
+<br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+

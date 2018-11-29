@@ -1,0 +1,100 @@
+﻿@model IEnumerable<CleaningService.Models.Complaint>
+
+@{
+    ViewBag.Title = "Complaint";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+
+
+@{if (TempData["msg"] != null)
+{
+    <script>alert('@TempData["msg"]')</script>
+}
+}
+<div>
+  <u>@Html.ActionLink("Back", "Adminhome")</u>
+</div>
+<center>
+    <h2>Complaint Reply</h2>
+    <br />
+
+
+    @if (ViewBag.data != null)
+    {
+
+        if (Model != null)
+        {
+
+            <table class="table table-striped">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubmitDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Complaints)
+                    </th>
+                   
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubmitDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Complaints)
+                        </td>
+                       
+                        
+                    </tr>
+                }
+
+
+            </table>
+
+            <br />
+            <br />
+            <br />
+            <br /><br />
+            using (Html.BeginForm("Complaint", "Admin", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <th>Reply</th>
+                        <td>@Html.TextArea("t1")</td>
+                        <td colspan="2">
+                            <h3 style="color:red">@TempData["error"]</h3>
+
+                        </td>
+                    </tr>
+
+
+                    <tr> <td> </td> <td><input type="submit" value="Update"></td></tr>
+
+
+                </table>
+            }
+
+        }
+    }
+</center>
+
+<br />
+<br />
+<br /><br /><br /><br /><br />
+<br /><br /><br /><br />

@@ -1,0 +1,77 @@
+﻿@model CleaningService.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Pajns Cleaning and Ironing Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Clean Login Form Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+
+    <!-- css files -->
+    <link href="~/Contents/LoginTemplate/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/Contents/LoginTemplate/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- /css files -->
+    <!-- online fonts -->
+    <link href="//fonts.googleapis.com/css?family=Sirin+Stencil" rel="stylesheet">
+    <!-- online fonts -->
+</head>
+<body>
+    <div class="container demo-1">
+
+        <div class="content">
+
+            <div id="large-header" class="large-header">
+
+                <h1>Pajns Login Form</h1>
+                <div class="main-agileits">
+                    <!--form-stars-here-->
+
+                    <div class="form-w3-agile">
+                        <h2>Login Now</h2>
+                        <form action="../Home/Login" method="post">
+                            <div class="form-sub-w3">
+                                @Html.TextBoxFor(model => model.UserName, new {type = "text", placeholder = "EmailID", required = "required" })
+                                <div class="icon-w3">
+
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="form-sub-w3">
+                                @Html.TextBoxFor(model => model.Password, new { type = "password", placeholder = "Password", required = "required" })
+                                <div class="icon-w3">
+                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                             <a class="" style="color:silver" href="../Home/Index">Back To Home</a>
+                            <p class="p-bottom-w3ls1">New User?<a class="" href="../Home/CustomerRegistration">  Register here</a></p>
+                            <div class="clear"></div>
+                            <div class="submit-w3l">
+                                <input type="submit" value="Login">
+                            </div>
+                        </form>
+                        <div class="social w3layouts">
+                            <div class="heading">
+                              
+                                <div class="clear"></div>
+                            </div>
+                           
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!--//form-ends-here-->
+                    <!--//form-ends-here-->
+                </div><!-- copyright -->
+                <div class="copyright w3-agile">
+                    <p> © 2017 Cleaning Service Login Form </p>
+                </div>
+                <!-- //copyright -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

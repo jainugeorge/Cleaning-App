@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "CheckReply";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+
+<div>
+    <u>@Html.ActionLink("Back", "Customerhome")</u>
+</div>
+<center>
+    <h2>Check Reply</h2>
+    <br />
+    @*@using (Html.BeginForm())
+    {
+        <p>
+            Select Complaintid:@Html.DropDownList("ComplaintId", "Select")<br />
+            &nbsp;     &nbsp;      &nbsp;    &nbsp;    &nbsp;   &nbsp;    &nbsp;      &nbsp;       &nbsp;     &nbsp;     &nbsp;     &nbsp;
+            &nbsp;     &nbsp;      &nbsp;    &nbsp;    &nbsp;   &nbsp;    &nbsp;      &nbsp;       &nbsp;     &nbsp;     &nbsp;     &nbsp;
+            <br />   <br />
+            <input type="submit" value="Search" />
+        </p>
+    }*@
+    <br />
+    @if (ViewBag.data != null)
+{
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                Subject
+            </th>
+            <th>
+                Submit Date
+            </th>
+            <th>
+                Complaint
+            </th>
+            <th>
+                Reply
+            </th>
+            <th>
+                Reply Date
+            </th>
+
+
+        </tr>
+
+        @foreach (var item in ViewBag.data)
+        {
+
+            <tr>
+                <td>
+                    @item.UserName
+                </td>
+                <td>
+                    @item.Subject
+                </td>
+                <td>
+                    @item.SubmitDate
+                </td>
+                <td>
+                    @item.Complaints
+                </td>
+                <td>
+                    @item.Reply
+                </td>
+                <td>
+                    @item.ReplyDate
+                </td>
+
+
+            </tr>
+        }
+
+
+    </table>
+}
+</center>
+
+<br />
+<br />
+<br />

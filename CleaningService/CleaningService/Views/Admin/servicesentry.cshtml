@@ -1,0 +1,79 @@
+﻿@model CleaningService.Models.ServiceAvailable
+@{
+    ViewBag.Title = "servicesentry";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div>
+    <u>@Html.ActionLink("Back", "Adminhome")</u>
+</div>
+<center>
+    <h2>Services Entry</h2>
+    <br />
+   
+  
+    @using (Html.BeginForm("servicesentry", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <table class="table table-striped"  >
+            @Html.AntiForgeryToken()
+
+
+
+
+            @Html.ValidationSummary(true)
+
+            <tr>
+                <td>@Html.LabelFor(model => model.TypeId, new { @class = "control-label col-md-2" })</td>
+
+                <td>@Session["TypeId"].ToString()</td>
+                <td> @Html.ValidationMessageFor(model => model.TypeId)</td>
+
+        </tr>
+        <tr></tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.TypeName, new { @class = "control-label col-md-2", required = "required" })</td>
+          
+         <td>@Html.DropDownListFor(model => model.TypeName, new SelectList(new[] { "Home Cleaning", "Commercial and Office Cleaning", "Floor Care Services", "Ironing", "Window Cleaning","Carpet Cleaning" }), "choose")</td>  
+            <td> @Html.ValidationMessageFor(model => model.TypeName, "", new { @class = "text-danger" })</td>
+
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.MinimumDurationInHours, new { @class = "control-label col-md-2", required = "required" })</td>
+
+            <td> @Html.EditorFor(model => model.MinimumDurationInHours, "choose", new { @class = "form-control" })</td>
+            <td> @Html.ValidationMessageFor(model => model.MinimumDurationInHours, "", new { @class = "text-danger" })</td>
+
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.PricePerHour, new { @class = "control-label col-md-2", required = "required" })</td>
+
+            <td> @Html.EditorFor(model => model.PricePerHour, "choose", new { @class = "form-control" })</td>
+            <td> @Html.ValidationMessageFor(model => model.PricePerHour, "", new { @class = "text-danger" })</td>
+
+        </tr>
+
+
+
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Picture, new { @class = "control-label col-md-2", required = "required" })</td>
+            <td><input type="file" name="file" width="50" height="50" /></td>
+
+           
+            <td>@Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })</td>
+
+        </tr>
+
+
+        <tr>
+            <td></td>
+            <td> <input type="submit" value="Create" class="btn btn-default" /> </td>
+        </tr>
+    </table>
+    }
+
+</center><br /><br />
+<br />
+<br /><br /><br /><br />

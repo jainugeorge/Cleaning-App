@@ -1,0 +1,105 @@
+﻿@model CleaningService.Models.BookingService 
+@{
+    ViewBag.Title = "CheckBooking";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+<style>
+    i {
+        text-decoration: underline;
+    }
+</style>
+<div>
+    <u>@Html.ActionLink("Back", "Customerhome")</u>
+</div>
+<center>
+    <h2>Check Booking Details</h2>
+    <br />
+        @if (ViewBag.data != null)
+    {
+        <table class="table table-striped"  >
+            <tr>
+                <th>Request Id</th>
+
+                <th>
+                    TypeId
+                </th>
+                <th>
+                    TypeName
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    Suburb
+                </th>
+                <th>
+                    Street
+                </th>
+                <th>
+                    ServiceDate
+                </th>
+                <th> Status</th>
+
+                <th>Advance Amount</th>
+                <th>Action</th>
+                <th>Action</th>
+
+            </tr>
+
+            @foreach (var item in ViewBag.data)
+            {
+                
+                    <tr>
+                        <td>
+                            @item.RequestId
+                        </td>
+
+                        <td>
+                            @item.TypeId
+                        </td>
+                        <td>
+                            @item.TypeName
+                        </td>
+                        <td>
+                            @item.City
+                        </td>
+                        <td>
+                            @item.Suburb
+                        </td>
+                        <td>
+                            @item.Street
+                        </td>
+                        <td>
+                            @item.ServiceDate
+                        </td>
+
+                        <td>@item.Status</td>
+
+                        <td>@item.AdvanceAmount</td>
+
+                        <td>
+
+                            <i>
+                                <b>
+                                    @Html.ActionLink("Confirm", "Payment", "Customer", new { Rid = item.RequestId, Tid = item.TypeId, Cid = item.CustomerId, TypeName = item.TypeName }, null)
+                                </b>
+                            </i>
+                        </td>
+                        <td>
+                            <i>
+                                <b>
+                                    @Html.ActionLink("Remove", "Remove", "Customer", new { Rid = item.RequestId }, null)
+                                </b>
+                            </i>
+                        </td>
+
+                    </tr>
+                
+            }
+
+        </table>
+    }</center>
+   
+
+<br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br />

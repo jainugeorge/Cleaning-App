@@ -1,0 +1,126 @@
+﻿@model CleaningService.Models.Employee
+@{
+    ViewBag.Title = "EmployeeRegistration";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div>
+    <u>@Html.ActionLink("Back", "Adminhome")</u>
+</div>
+<center>
+    <h2>Employee Registration</h2>
+    <br />
+    @{if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+    }
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+
+        @Html.ValidationSummary(true)
+
+
+        <table class="table table-striped"  >
+            <tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.EmployeeId, new { @class = "control-label col-md-2"})</td>
+
+                <td>@Session["EmployeeId"].ToString()</td>
+                <td> @Html.ValidationMessageFor(model => model.EmployeeId)</td>
+
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>@Html.EditorFor(model => model.Name)</td>
+                <td>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>
+                    Male @Html.RadioButton("Gender", "Male")
+                    Female @Html.RadioButton("Gender", "Female", true)
+                </td>
+                <td>   @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.DOB, new { @class = "control-label col-md-2", required = "required" })</td>
+                <td> <input type="date" name="DOB"> </td>
+                <td> @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>@Html.EditorFor(model => model.Email)</td>
+                <td>  @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>@Html.EditorFor(model => model.PhoneNumber)</td>
+                <td>  @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td> @Html.TextAreaFor(model => model.Address) </td>
+                <td>  @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Experience, new { @class = "control-label col-md-2", required = "required" })</td>
+                <td> @Html.EditorFor(model => model.Experience) </td>
+
+                <td>  @Html.ValidationMessageFor(model => model.Experience, "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Designation, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>@Html.DropDownListFor(model => model.Designation, new SelectList(new[] { "Supervisor", "Accountant", "Trainer", "Receptionist", "Cleaner", "Others" }), "choose") </td>
+                <td>  @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })</td>
+
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.Salary, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td> @Html.EditorFor(model => model.Salary)</td>
+                <td> @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" }) </td>
+
+            </tr>
+
+
+            <tr>
+                <td> @Html.LabelFor(model => model.StartDate, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td><input type="date" name="StartDate"></td>
+                <td> @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })</td>
+
+            </tr>
+
+
+
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Register" class="btn btn-default" /></td>
+            </tr>
+
+
+
+        </table>
+
+
+    }
+
+</center>

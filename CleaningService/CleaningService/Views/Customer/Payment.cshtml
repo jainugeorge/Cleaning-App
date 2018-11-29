@@ -1,0 +1,107 @@
+﻿@model CleaningService.Models.Payment
+
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Customer/CustomerLayout.cshtml";
+}
+<div>
+    <u>@Html.ActionLink("Back", "CheckBooking")</u>
+</div>
+<center>
+   
+    <h2>Payment</h2>
+    <br />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true)
+
+
+
+
+        <table class="table table-striped"  >
+            <tr>
+                <td>    @Html.LabelFor(model => model.PaymentMode, new { @class = "control-label col-md-2", required = "required" }) </td>
+
+                <td>@Html.DropDownListFor(model => model.PaymentMode, new SelectList(new[] { "Card" }), "choose") </td>
+                <td> @Html.ValidationMessageFor(model => model.PaymentMode, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td>  @Html.LabelFor(model => model.CardNo, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>   @Html.EditorFor(model => model.CardNo)</td>
+                <td>    @Html.ValidationMessageFor(model => model.CardNo, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(model => model.CVV, new { @class = "control-label col-md-2", required = "required" })</td>
+
+                <td>   @Html.EditorFor(model => model.CVV)</td>
+                <td>   @Html.ValidationMessageFor(model => model.CVV, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(model => model.ExpiryMonth, new { @class = "control-label col-md-2", required = "required" })</td>
+                <td>
+                    <select name="ExpiryMonth" >
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+
+                        <option value="3">March</option>
+
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+
+                        <option value="6">June</option>
+
+                        <option value="7">July</option>
+
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+
+                        <option value="10">October</option>
+
+                        <option value="11">November</option>
+
+                        <option value="12">December</option>
+
+
+                    </select>
+                    </td>
+                    @*<td>@Html.DropDownListFor(model => model.ExpiryMonth, new SelectList(new[] {"January", "February", "March", "April", "May", "June", "July","August","September","October","November","December" }), "choose") </td>*@
+                <td>  @Html.ValidationMessageFor(model => model.ExpiryMonth, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(model => model.ExpiryYear, new { @class = "control-label col-md-2", required = "required" })</td>
+                <td>
+                    @Html.EditorFor(model => model.ExpiryYear)
+                </td>
+                <td>    @Html.ValidationMessageFor(model => model.ExpiryYear, "", new { @class = "text-danger" })</td>
+            </tr>
+
+            <tr>
+                <td>  @Html.LabelFor(model => model.Amount, new { @class = "control-label col-md-2" })</td>
+
+                <td>      @Session["AdvanceAmount"].ToString()</td>
+                <td>   @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })</td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Pay" class="btn btn-default" /></td>
+            </tr>
+        </table>
+    }
+
+   
+
+
+</center>
+
+<br />
+<br /><br /><br /><br />

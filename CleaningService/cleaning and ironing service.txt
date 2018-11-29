@@ -1,0 +1,129 @@
+////////////////////USERS/////////////////////////////
+CREATE TABLE [dbo].[Users] (
+    [UserName] NVARCHAR (128) NOT NULL,
+    [Password] NVARCHAR (MAX) NULL,
+    [Role]     NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([UserName] ASC)
+);
+
+///////////////////////////////////////////////////////////
+////////////////////////EMPLOYEES///////////////////////////
+CREATE TABLE [dbo].[Employees] (
+    [EmployeeId]  NVARCHAR (50)  NOT NULL,
+    [Name]        NVARCHAR (MAX) NOT NULL,
+    [Gender]      NVARCHAR (MAX) NOT NULL,
+    [DOB]         NVARCHAR (MAX) NOT NULL,
+    [Email]       NVARCHAR (MAX) NOT NULL,
+    [PhoneNumber] NVARCHAR (MAX) NOT NULL,
+    [Address]     NVARCHAR (MAX) NOT NULL,
+    [Experience]  NVARCHAR (MAX) NOT NULL,
+    [Designation] NVARCHAR (MAX) NOT NULL,
+    [Salary]      NVARCHAR (MAX) NOT NULL,
+    [StartDate]   NVARCHAR (MAX) NOT NULL,
+    [EndDate]     NVARCHAR (MAX) NULL,
+    [Remarks]     NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED ([EmployeeId] ASC)
+);
+///////////////////////////////////////////////////////////////////
+////////////////////////////CUSTOMER//////////////////////////////
+CREATE TABLE [dbo].[Customers] (
+    [CustomerId]      NVARCHAR (50)  NOT NULL,
+    [Name]            NVARCHAR (MAX) NOT NULL,
+    [Email]           NVARCHAR (MAX) NOT NULL,
+    [Password]        NVARCHAR (MAX) NULL,
+    [ConfirmPassword] NVARCHAR (MAX) NULL,
+    [City]            NVARCHAR (MAX) NOT NULL,
+    [Suburb]          NVARCHAR (MAX) NOT NULL,
+    [Street]          NVARCHAR (MAX) NOT NULL,
+    [PhoneNumber]     NVARCHAR (MAX) NOT NULL,
+    CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED ([CustomerId] ASC)
+);
+/////////////////////////////////////////////////////////////////
+///////////////////SERVICE AVAILABLE///////////////////////
+CREATE TABLE [dbo].[ServiceAvailables] (
+    [TypeId]                 NVARCHAR (128) NOT NULL,
+    [TypeName]               NVARCHAR (MAX) NOT NULL,
+    [MinimumDurationInHours] INT            NOT NULL,
+    [PricePerHour]           INT            NOT NULL,
+    [Total]                  INT            NOT NULL,
+    [Picture]                NVARCHAR (MAX) NULL,
+    [Status]                 NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_ServiceAvailables] PRIMARY KEY CLUSTERED ([TypeId] ASC)
+);
+////////////////////////////////////////////////////////////////
+//////////////////BOOKING SERVICE//////////////////////////////
+CREATE TABLE [dbo].[BookingServices] (
+    [RequestId]              NVARCHAR (128) NOT NULL,
+    [CustomerId]             NVARCHAR (MAX) NULL,
+    [TypeId]                 NVARCHAR (MAX) NULL,
+    [TypeName]               NVARCHAR (MAX) NULL,
+    [City]                   NVARCHAR (MAX) NOT NULL,
+    [Suburb]                 NVARCHAR (MAX) NOT NULL,
+    [Street]                 NVARCHAR (MAX) NOT NULL,
+    [ServiceDate]            NVARCHAR (MAX) NOT NULL,
+    [SubmitDate]             NVARCHAR (MAX) NULL,
+    [Requirements]           NVARCHAR (MAX) NULL,
+    [Status]                 NVARCHAR (MAX) NULL,
+    [MinimumDurationInHours] NVARCHAR (MAX) NULL,
+    [AdvanceAmount]          INT            NOT NULL,
+    [ReplyDate]              NVARCHAR (MAX) NULL,
+    [CommentBox]             NVARCHAR (MAX) NULL,
+    [StartTime]              NVARCHAR (MAX) NULL,
+    [EndTime]                NVARCHAR (MAX) NULL,
+    [Total]                  INT            NOT NULL,
+    [Discount]               INT            NOT NULL,
+    [PaymentAmount]          INT            NOT NULL,
+    [PaymentStatus]          NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_BookingServices] PRIMARY KEY CLUSTERED ([RequestId] ASC)
+);
+///////////////////////////////////////////////////////////////
+/////////////////////PAYMENT//////////////////////////////
+CREATE TABLE [dbo].[Payments] (
+    [PaymentId]   NVARCHAR (128)  NOT NULL,
+    [RequestId]   NVARCHAR (MAX)  NULL,
+    [CustomerId]  NVARCHAR (MAX)  NULL,
+    [TypeId]      NVARCHAR (MAX)  NULL,
+    [SubmitDate]  NVARCHAR (MAX)  NULL,
+    [PaymentMode] NVARCHAR (MAX)  NOT NULL,
+    [CardNo]      NVARCHAR (MAX)  NOT NULL,
+    [CVV]         NVARCHAR (MAX)  NOT NULL,
+    [ExpiryMonth] NVARCHAR (MAX)  NOT NULL,
+    [ExpiryYear]  NVARCHAR (MAX)  NOT NULL,
+    [Amount]      DECIMAL (18, 2) NULL,
+    [Status]      NVARCHAR (MAX)  NULL,
+    CONSTRAINT [PK_Payments] PRIMARY KEY CLUSTERED ([PaymentId] ASC)
+);
+///////////////////////////////////////////////////////////////
+///////////////////////VIRTUAL BANK///////////////////////////////
+CREATE TABLE [dbo].[VirtualBanks] (
+    [id]            NVARCHAR (50)   NOT NULL,
+    [CardNumber]    NVARCHAR (MAX)  NULL,
+    [CVV]           NVARCHAR (MAX)  NULL,
+    [ExpiryMonth]   NVARCHAR (MAX)  NULL,
+    [ExpiryYear]    NVARCHAR (MAX)  NULL,
+    [BalanceAmount] DECIMAL (18, 2) NULL,
+    CONSTRAINT [PK_VirtualBanks] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+////////////////////////////////////////////////////////////////
+////////////////////////FEEDBACK///////////////////////////////
+CREATE TABLE [dbo].[Feedbacks] (
+    [FeedbackId] NVARCHAR (50)  NOT NULL,
+    [CustomerId] NVARCHAR (50)  NULL,
+    [RequestId]  NVARCHAR (50)  NULL,
+    [FeedBack]   NVARCHAR (MAX) NOT NULL,
+    [Date]       NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Feedbacks] PRIMARY KEY CLUSTERED ([FeedbackId] ASC)
+);
+/////////////////////////////////////////////////////////////////
+////////////////////////COMPLAINT/////////////////////////////////
+CREATE TABLE [dbo].[Complaints] (
+    [ComplaintId] NVARCHAR (50)  NOT NULL,
+    [UserName]    NVARCHAR (50)  NULL,
+    [Subject]     NVARCHAR (MAX) NOT NULL,
+    [SubmitDate]  NVARCHAR (MAX) NULL,
+    [Complaints]  NVARCHAR (MAX) NOT NULL,
+    [Reply]       NVARCHAR (MAX) NULL,
+    [ReplyDate]   NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Complaints] PRIMARY KEY CLUSTERED ([ComplaintId] ASC)
+);
+////////////////////////////////////////////////////////////////////

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cleaningModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BookingServices">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CustomerId" Type="nvarchar(max)" />
+    <Property Name="TypeId" Type="nvarchar(max)" />
+    <Property Name="TypeName" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Suburb" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ServiceDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubmitDate" Type="nvarchar(max)" />
+    <Property Name="Requirements" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="MinimumDurationInHours" Type="nvarchar(max)" />
+    <Property Name="AdvanceAmount" Type="int" Nullable="false" />
+    <Property Name="ReplyDate" Type="nvarchar(max)" />
+    <Property Name="CommentBox" Type="nvarchar(max)" />
+    <Property Name="StartTime" Type="nvarchar(max)" />
+    <Property Name="EndTime" Type="nvarchar(max)" />
+    <Property Name="Total" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="int" Nullable="false" />
+    <Property Name="PaymentAmount" Type="int" Nullable="false" />
+    <Property Name="PaymentStatus" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Complaints">
+    <Key>
+      <PropertyRef Name="ComplaintId" />
+    </Key>
+    <Property Name="ComplaintId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubmitDate" Type="nvarchar(max)" />
+    <Property Name="Complaints" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Reply" Type="nvarchar(max)" />
+    <Property Name="ReplyDate" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="ConfirmPassword" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Suburb" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DOB" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Experience" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salary" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EndDate" Type="nvarchar(max)" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Feedbacks">
+    <Key>
+      <PropertyRef Name="FeedbackId" />
+    </Key>
+    <Property Name="FeedbackId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerId" Type="nvarchar" MaxLength="50" />
+    <Property Name="RequestId" Type="nvarchar" MaxLength="50" />
+    <Property Name="FeedBack" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RequestId" Type="nvarchar(max)" />
+    <Property Name="CustomerId" Type="nvarchar(max)" />
+    <Property Name="TypeId" Type="nvarchar(max)" />
+    <Property Name="SubmitDate" Type="nvarchar(max)" />
+    <Property Name="PaymentMode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CardNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CVV" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ExpiryMonth" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ExpiryYear" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Status" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ServiceAvailables">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MinimumDurationInHours" Type="int" Nullable="false" />
+    <Property Name="PricePerHour" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" Nullable="false" />
+    <Property Name="Picture" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Role" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="VirtualBanks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CardNumber" Type="nvarchar(max)" />
+    <Property Name="CVV" Type="nvarchar(max)" />
+    <Property Name="ExpiryMonth" Type="nvarchar(max)" />
+    <Property Name="ExpiryYear" Type="nvarchar(max)" />
+    <Property Name="BalanceAmount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="cleaningModelStoreContainer">
+    <EntitySet Name="BookingServices" EntityType="Self.BookingServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Complaints" EntityType="Self.Complaints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedbacks" EntityType="Self.Feedbacks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceAvailables" EntityType="Self.ServiceAvailables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VirtualBanks" EntityType="Self.VirtualBanks" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
